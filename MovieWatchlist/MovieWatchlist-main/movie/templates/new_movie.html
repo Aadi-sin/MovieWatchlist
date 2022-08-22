@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+    <form name="add_movie" method="post" novalidate class="form">
+        <div class="form__container">
+            {{ field.label(class_="form__label") }}
+                {{ field(class_="form__field")}}
+            
+                {%- for error in field.errors %}
+                    <span class="form__error">{{ error }}</span>
+                {% endfor %}
+        </div>
+    </form>
+{% endblock %}
